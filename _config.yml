@@ -1,0 +1,6 @@
+markdown: rdiscount
+pygments: true
+permalink: /:month-:day-:year/:title.html
+auto: true
+rdiscount:
+  extensions: [smart]

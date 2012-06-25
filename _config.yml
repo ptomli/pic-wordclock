@@ -1,7 +1,6 @@
 markdown: rdiscount
 pygments: true
-baseurl: /pic-wordclock/
-permalink: /:year/:month/:day/:title.html
+permalink: :year/:month/:day/:title.html
 auto: true
 rdiscount:
   extensions: [smart]

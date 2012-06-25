@@ -1,6 +1,6 @@
 ---
 layout: post
-title: PIC Wordclock--
+title: PIC Wordclock
 ---
 
 # Hello World!

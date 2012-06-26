@@ -1,6 +1,10 @@
 markdown: rdiscount
 pygments: true
-permalink: ./:year/:month/:day/:title.html
+permalink: ':year/:month:/:day/:title.html'
 auto: true
 rdiscount:
   extensions: [smart]
+
+baseurl: /pic-wordclock
+url: http://ptomli.github.com/pic-wordclock
+

@@ -1,36 +1,77 @@
 <!DOCTYPE html>
-<html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!-- Consider specifying the language of your content by adding the `lang` attribute to <html> -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta charset="utf-8">
+  <!--<meta http-equiv="content-type" content="text/html; charset=utf-8">-->
+
+  <!-- Use the .htaccess and remove these lines to avoid edge case issues. More info: h5bp.com/i/378 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
   <title>{{ page.title }}</title>
-  <meta name="author" content="Paul Tomlin" />
-  <meta name="description" content="Learning PIC and electronics, making something cool." />
+
+  <meta name="author" content="Paul Tomlin">
+  <meta name="description" content="Learning PIC and electronics, making something cool.">
+
+  <!-- Mobile viewport optimized: h5bp.com/viewport -->
+  <meta name="viewport" content="width=device-width">
+
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
+
+  <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css">
+
+  <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
+
+  <!-- All JavaScript at the bottom, except this Modernizr build.
+    Modernizr enables HTML5 elements & feature detects for optimal performance.
+    Create your own custom Modernizr build: www.modernizr.com/download/
+  -->
+  <script src="{{ site.baseurl }}/js/vendor/modernizr-2.5.3.min.js"></script>
 </head>
 
 <body>
+  <pre>
+    site.baseurl: {{ site.baseurl }}
+    site.url: {{ site.url }}
+    
+    UAID: {{ site.analytics.google.id }}
+  </pre>
   <section class="sidebar">
     <section class="name">
-      <a href="/">
+      <a href="{{ site.baseurl }}/">
         <span id="paul">Paul</span>
         <span id="tomlin">Tomlin</span>
       </a>
     </section>
 
     <section class="alt-text">&nbsp;</section>
-
-    <!--
-    <section class="meta">
-      <a href="https://github.com/ptomli" id="github">
-        <img src="/images/github.png" alt="github" title="@ptomli on GitHub" height="16" width="16" />
-      </a>
-      <a href="https://twitter.com/ptomli" id="twitter">
-        <img src="/images/twitter.png" alt="twitter" title="@ptomli on Twitter" height="16" width="16" />
-      </a>
-    </section>
-    -->
   </section>
 
   {{ content }}
+
+  <!-- JavaScript at the bottom for fast page loading: http://developer.yahoo.com/performance/rules.html#js_bottom -->
+
+  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="{{ site.baseurl }}/js/vendor/jquery-1.7.2.min.js"><\/script>')</script>
+
+  <!-- scripts concatenated and minified via build script -->
+  <script src="{{ site.baseurl }}/js/plugins.js"></script>
+  <script src="{{ site.baseurl }}/js/main.js"></script>
+  <!-- end scripts -->
+
+  <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
+       mathiasbynens.be/notes/async-analytics-snippet -->
+  <script>
+    var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+    // (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    // g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    // s.parentNode.insertBefore(g,s)}(document,'script'));
+  </script>
 </body>
 
 </html>

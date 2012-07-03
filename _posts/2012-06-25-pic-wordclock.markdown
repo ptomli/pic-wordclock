@@ -3,7 +3,7 @@ layout: post
 title: PIC Wordclock
 ---
 
-# Hello World!
+### Hello World!
 
 The customary introduction in computer programming is Hello World. Naturally, in the world of
 micro controllers, it's _blink_. Make an LED flash. Yay-ness!

@@ -439,8 +439,27 @@ td {
    Author:
    ========================================================================== */
 
+.header {
+    display: block;
+    background: #eee;
+    border-top: solid 1px #eee;
+    border-bottom: solid 1px #ddd;
+}
 
+.header > .name {
+    display: block;
+    margin: 1em;
+}
 
+.content {
+    margin: 1em;
+}
+
+pre {
+    padding: 1em;
+    background: #eee;
+    border: dashed 1px #ddd;
+}
 
 
 

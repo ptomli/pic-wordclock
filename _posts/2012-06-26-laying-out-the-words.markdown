@@ -3,8 +3,6 @@ layout: post
 title: Laying out the words
 ---
 
-# Laying out the words
-
 One day my news feeds highlighted an article about
 [Building a word clock with genetic algorithms](http://hackaday.com/2012/04/10/building-a-word-clock-with-genetic-algorithms/).
 

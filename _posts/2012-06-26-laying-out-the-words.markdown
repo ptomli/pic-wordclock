@@ -43,6 +43,6 @@ You will note that there are situations where words are abutting each other.
 This is allowable in those situations, since those words will not be used together in any phrase.
 A example is the fifth line, where [four], [ten] and [one] are all squeezed together.
 But these words are only ever used to denote the hour, and I'm not aware of any clock system where that might be an issue.
-Certainly notthe one I choose to understand day by day.
+Certainly not the one I choose to understand day by day.
 
 So there it is. I'll be building a 10x10 matrix of letters, some of which happen to form useful words in sequences that allow me to spell out a reasonable approximation of the current time.

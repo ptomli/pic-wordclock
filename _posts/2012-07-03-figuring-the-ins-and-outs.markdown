@@ -1,14 +1,13 @@
 ---
 layout: post
 title: Figuring the ins and outs
-published: false
 ---
 
 Based on the [previous decision about how the words will be arranged]({{ site.baseurl}}/2012/06/26/laying-out-the-words.html),
 I can see that there are a total of twenty words which need to be illuminated. This post is about the ways that this can be
 done, and the pros and cons of the approaches.
 
-## Twenty I/Os
+### Twenty I/Os
 Yup, it's gotta be the most obvious approach I could take. It's pretty simple to understand and actually does have a good point or two, regardless of the downsides.
 
 ![Schematic for Twenty I/Os]({{ site.baseurl }}/images/2012-07-03-twenty-ios-schematic.png)
@@ -20,21 +19,23 @@ Yup, it's gotta be the most obvious approach I could take. It's pretty simple to
 #### Cons
  * Requires a silly number of I/O pins on the µC
 
-## Shift Registers
+### Shift Registers
 A common way of expanding available parallel I/O pins.
 
 ![Schematic for Shift Registers]({{ site.baseurl }}/images/2012-07-03-shift-registers-schematic.png)
 
 #### Pros
  * Easy to handle higher power loads through a transistor
+ * Even easier, there are high power (150+ mA) versions available, negating the need for transistors for power switching
  * Can illuminate any number of LEDs concurrently
+ * Can _chain_ multiple shift registers, thus expanding I/O pins, without needing more µC pins
 
 #### Cons
  * For twenty I/O I'd likely need three 8bit devices, which all adds to the cost.
    While cost is not a primary factor in doing this little exercise, it seems likely that add
    three devices is going to be more expensive, and more complicated, than simply getting a bigger µC
 
-## Multiplexing
+### Multiplexing
 This involves arranging the LEDs in a grid, in this case 5x4, and arranging the state of the I/O pins of the µC
 such that current may flow through a _particular_ LED.
 
@@ -47,7 +48,7 @@ such that current may flow through a _particular_ LED.
 #### Cons
  * More complicated (impossible?) to illuminate arbitrary sets of LEDs concurrently
 
-## Charlieplexing
+### Charlieplexing
 This involves making use of the tristate nature of the µC I/O pins, where a pin configured as an input is high impedance. Allows individual addressing of twenty LEDs using only five I/O pins.
 
 ![Schematic for Charlieplexing]({{ site.baseurl }}/images/2012-07-03-charlieplexing-schematic.png)
@@ -63,3 +64,12 @@ This involves making use of the tristate nature of the µC I/O pins, where a pin
    I've not seen any examples of such online.
  
  * Not possible to illuminate multiple LEDs concurrently in any sensible fashion
+
+## Conclusions?
+Besides knowing that dedicating a µC pin to each LED is plain barmy, I'm not entirely sold on any option.
+I think it'll be a case of working out how big this thing is going to be, which will dictate things like
+the LED power requirements.
+
+I think it's entirely conceivable that I'll end up making a couple of versions. A small, SMT based, desk clock
+might well work nicely with Charlieplexing, while a metre square unit for the wall will need something a _tad_
+more pokey.

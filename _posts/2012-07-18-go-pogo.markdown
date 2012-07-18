@@ -1,0 +1,21 @@
+---
+layout: post
+title: Go! Pogo!
+---
+
+## Is there really a need for an ICSP header?
+While perusing the SparkFun tutorials, I happened across their [PogoBeds](http://www.sparkfun.com/tutorials/138)
+post, which basically explains how they test and prepare their wares.
+
+They make use of a really interesting little wotsit called a "Pogo Pin", which is essentially a pin with a sprung end.
+It dawned on me that I could create a cable to run from the PICkit 3 to a set of Pogo Pins on a small board, which is
+then pressed onto the main board for programming. Saves needing to put an ICSP header, and I'd have needed to create
+a lead from the PICkit anyway.
+
+Seems like a possible plan, and if I make the ICSP contacts on the board as plated through holes then there's nothing to
+stop me from soldering on a header later if it all goes awry.
+
+[Pogo Pin @ SparkFun](http://www.sparkfun.com/products/9173)
+
+![]({{ site.baseurl }}/images/2012-07-18-pogo-pin.jpg)
+
